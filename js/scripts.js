@@ -16,6 +16,7 @@ function prefCalc(pref1) {
 function suggCalc(questTotal, preferance, salary, que6, que7, pref1, pref2) {
   let suggestion = 0;
   let choice;
+  let choiceSugg;
   if (que6 >= 4 && que7 >= 4) {
     choice = 1;
   } else if (que6 >= 3 && que7 >= 3) {
@@ -25,45 +26,89 @@ function suggCalc(questTotal, preferance, salary, que6, que7, pref1, pref2) {
   }
 
   if (pref1 === 1) {
-    suggestion = "1. Front-end - JavaScript, ";
+    suggestion = "Front-end - JavaScript";
   } else if (pref1 === 2) {
-    if (coice === 1) {
-      suggestion = "1. Back-End - Python, ";
+    if (choice === 1) {
+      suggestion = "Back-End - Python";
+      choiceSugg = "Back-End - Ruby or PHP";
     } else if (choice === 2) {
-      suggestion = "1. Back-End - Ruby or PHP, "
+      suggestion = "Back-End - Ruby or PHP";
+      choiceSugg = "Back-End - Python";
     } else {
-      suggestion = "1. Back-End - JavaScript, "
+      suggestion = "Back-End - JavaScript";
+      choiceSugg = "Back-End - Python";
     }
   } else if (pref1 === 3) {
     if (choice === 1) {
-      suggestion = "1. Mobile - Java, "
+      suggestion = "Mobile - Java";
+      choiceSugg = "Mobile - C#";
     } else {
-      suggestion = "1. Mobile - C#, "
+      suggestion = "Mobile - C#";
+      choiceSugg = "Mobile - Java";
     }
   } else if (pref1 === 4) {
-    suggestion = "1. Game - C# "
+    suggestion = "Game - C#";
   } else if (pref1 === 5) {
     if (choice === 1) {
-      suggestion = "1. Desktop - C#, "
+      suggestion = "Desktop - C#";
+      choiceSugg = "Desktop - Go";
     } else {
-      suggestion = "1. Mobile - Python, "
+      suggestion = "Desktop - Go";
+      choiceSugg = "Desktop - C#";
     }
-  } else if (pref1 === 6) {
-    suggestion = "1. System - Go "
+  } else {
+    suggestion = "System - Go";
   }
+
   if (preferance === "both") {
-    
-
-    if (pref1 === 2 || pref2 === 2) {
-
-    } else if (pref1 === 3 || pref2 === 3) {
-
-    } else if (pref1 === 4 || pref2 === 4) {
-
-    } else if (pref1 === 5 || pref2 === 5) {
-
-    } else if (pref1 === 6 || pref2 === 6) {
-
+    if (pref2 === 1) {
+      suggestion = "1. " + suggetion + ", and 2. Front-end - JavaScript";
+    } else if (pref2 === 2) {
+      if (choice === 1) {
+        suggestion = "1. " + suggetion + ", and 2. Back-End - Python";
+      } else if (choice === 2) {
+        suggestion = "1. " + suggetion + ", and 2. Back-End - Ruby or PHP";
+      } else {
+        suggestion = "1. " + suggetion + ", and 2. Back-End - JavaScript";
+      }
+    } else if (pref2 === 3) {
+      if (choice === 1) {
+        suggestion = "1. " + suggetion + ", and 2. Mobile - Java";
+      } else {
+        suggestion = "1. " + suggetion + ", and 2. Mobile - C#";
+      }
+    } else if (pref2 === 4) {
+      suggestion = "1. " + suggetion + ", and 2. Game - C#";
+    } else if (pref2 === 5) {
+      if (choice === 1) {
+        suggestion = "1. " + suggetion + ", and 2. Desktop - C#";
+      } else {
+        suggestion = "1. " + suggetion + ", and 2. Desktop - Go";
+      }
+    } else {
+      suggestion = "1. " + suggetion + ", and 2. System - Go";
+    } 
+  } else if (pref1 === 1 || pref1 === 4 || pref1 === 6){
+    suggestion = suggestion + ". I would suggest looking at some other programs too"
+  } else {
+    if (choice === 1 || choice === 3) {
+      choice = 2;
+    } else {
+      choice = 1;
+    }
+    if (pref1 === 2) {
+      if (choice === 1) {
+        suggestion = "1. " + suggetion + ", and 2. Back-End - Python";
+      } else {
+        suggestion = "1. " + suggetion + ", and 2. Back-End - Ruby or PHP"
+      }
+    }
+    if (pref1 === 3) {
+      if (choice === 1) {
+        suggestion = "1. " + suggetion + ", and 2. Mobile - Java"
+      } else {
+        suggestion = "1. " + suggetion + ", and 2. Mobile - C#"
+      }
     }
   }
 
