@@ -1,3 +1,4 @@
+
 function questCalc(que1, que2, que3, que4, que5) {
   const queTotal = que1 + que2 + que3 + que4 + que5;
   return queTotal;
@@ -50,38 +51,38 @@ function suggCalc(questTotal, que6, que7, pref1, pref2) {
     suggestion = "System - Go";
   }
 
-  if (preferance === "both") {
+  if (pref1 !== pref2) {
     if (pref2 === 1) {
-      suggestion = "1. " + suggetion + ", and 2. Front-end - JavaScript";
+      suggestion = "1. " + suggestion + ", and 2. Front-end - JavaScript";
     } else if (pref2 === 2) {
       if (choice === 1) {
-        suggestion = "1. " + suggetion + ", and 2. Back-End - Python";
+        suggestion = "1. " + suggestion + ", and 2. Back-End - Python";
       } else if (choice === 2) {
-        suggestion = "1. " + suggetion + ", and 2. Back-End - Ruby or PHP";
+        suggestion = "1. " + suggestion + ", and 2. Back-End - Ruby or PHP";
       } else {
-        suggestion = "1. " + suggetion + ", and 2. Back-End - JavaScript";
+        suggestion = "1. " + suggestion + ", and 2. Back-End - JavaScript";
       }
     } else if (pref2 === 3) {
       if (choice === 1) {
-        suggestion = "1. " + suggetion + ", and 2. Mobile - Java";
+        suggestion = "1. " + suggestion + ", and 2. Mobile - Java";
       } else {
-        suggestion = "1. " + suggetion + ", and 2. Mobile - C#";
+        suggestion = "1. " + suggestion + ", and 2. Mobile - C#";
       }
     } else if (pref2 === 4) {
-      suggestion = "1. " + suggetion + ", and 2. Game - C#";
+      suggestion = "1. " + suggestion + ", and 2. Game - C#";
     } else if (pref2 === 5) {
       if (choice === 1) {
-        suggestion = "1. " + suggetion + ", and 2. Desktop - C#";
+        suggestion = "1. " + suggestion + ", and 2. Desktop - C#";
       } else {
-        suggestion = "1. " + suggetion + ", and 2. Desktop - Go";
+        suggestion = "1. " + suggestion + ", and 2. Desktop - Go";
       }
     } else {
-      suggestion = "1. " + suggetion + ", and 2. System - Go";
+      suggestion = "1. " + suggestion + ", and 2. System - Go";
     } 
   } else if (pref1 === 1 || pref1 === 4 || pref1 === 6){
     suggestion = suggestion + ". I would suggest looking at some other programs too";
   } else {
-    suggestion = suggetion + choiceSugg;
+    suggestion = suggestion + choiceSugg;
   }
 
   if (questTotal >= 17) {
@@ -95,8 +96,9 @@ function suggCalc(questTotal, que6, que7, pref1, pref2) {
   return suggestion;
 }
 
+
 $(document).ready(function() {
-  $("#survey").submit(fuction(event) {
+  $(".survey").submit(function(event) {
     event.preventDefault();
     const question1 = parseInt($("input:radio[name=question1]:checked").val());
     const question2 = parseInt($("input:radio[name=question2]:checked").val());
@@ -107,16 +109,16 @@ $(document).ready(function() {
     const question7 = parseInt($("input:radio[name=question7]:checked").val());
     const first = parseInt($("#first").val());
     const second = parseInt($("#second").val());
-
+    alert(first);
+    alert(second);
     const qTotal = questCalc(question1, question2, question3, question4, question5);
 
-    const pTotal = prefCalc(first);
-
-    const result = suggCalc(pTotal, pTotal, question6, question7, first, second);
+    const result = suggCalc(qTotal, question6, question7, first, second);
 
     $("#suggested-language").text(result);
 
     $("#language").show();
+    $(".survey").toggle();
 
   });
 });
