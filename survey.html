@@ -12,56 +12,6 @@
     <form class="survey">
       <div class="form-row pt-3">
         <div class="">
-          <p class="form-check-label">What type of development do you want to forcus on?</p>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="devType" value="front">
-          <label class="form-check-label">front-end web</label>
-        </div>
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="devType" value="back">
-          <label class="form-check-label">back-end web</label>
-        </div>
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="devType" value="modile">
-          <label class="form-check-label">mobile</label>
-        </div>
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="devType" value="game">
-          <label class="form-check-label">game</label>
-        </div>
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="devType" value="desktop">
-          <label class="form-check-label">desktop app</label>
-        </div>
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="devType" value="system">
-          <label class="form-check-label">system</label>
-        </div>
-      </div>
-      <div class="form-row pt-3">
-        <div class="">
-          <p class="form-check-label">What type of salary are you expecting?</p>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
-          <label class="form-check-label" for="inlineRadio1">$50-60K</label>
-        </div>
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
-          <label class="form-check-label" for="inlineRadio2">$65-$75K</label>
-        </div>
-        <div class="form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
-          <label class="form-check-label" for="inlineRadio3">$80-$100K</label>
-        </div>
-      </div>
-      <div class="form-row pt-3">
-        <div class="">
           <p class="form-check-label">On a scale, please rate the following questions?</p>
         </div>
       </div>
@@ -252,6 +202,102 @@
         <div class="form-check-inline">
           <input class="form-check-input" type="radio" name="devType" value="1">
           <label class="form-check-label font-weight-bold">DISAGREE</label>
+        </div>
+      </div>
+      <div class="form-row pt-3">
+        <div class="">
+          <p class="form-check-label">What type of salary are you expecting?</p>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1">
+          <label class="form-check-label" for="inlineRadio1">$50-60K</label>
+        </div>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2">
+          <label class="form-check-label" for="inlineRadio2">$65-$75K</label>
+        </div>
+        <div class="form-check-inline">
+          <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3">
+          <label class="form-check-label" for="inlineRadio3">$80-$100K</label>
+        </div>
+      </div>
+      <div class="form-row pt-3">
+        <div class="">
+          <p class="form-check-label">Rate the following on a 5 point scale, how much you want to focus on each?</p>
+        </div>
+      </div>
+      <div class="pt-3">
+        <p class="form-check-label">front-end web</p>
+        <div class="">
+          <select class="form-control" id="front">
+            <option value="5">5 - Very much</option>
+            <option value="4">4 - Sounds good</option>
+            <option value="3">3 - No opinion</option>
+            <option value="2">2 - Not realy</option>
+            <option value="1">1 - Not at all</option>
+          </select>
+        </div>
+      </div>
+      <div class="pt-3">
+        <p class="form-check-label">Back-end web</p>
+        <div class="">
+          <select class="form-control" id="back">
+            <option value="5">5 - Very much</option>
+            <option value="4">4 - Sounds good</option>
+            <option value="3">3 - No opinion</option>
+            <option value="2">2 - Not realy</option>
+            <option value="1">1 - Not at all</option>
+          </select>
+        </div>
+      </div>
+      <div class="pt-3">
+        <p class="form-check-label">Mobile</p>
+        <div class="">
+          <select class="form-control" id="mobile">
+            <option value="5">5 - Very much</option>
+            <option value="4">4 - Sounds good</option>
+            <option value="3">3 - No opinion</option>
+            <option value="2">2 - Not realy</option>
+            <option value="1">1 - Not at all</option>
+          </select>
+        </div>
+      </div>
+      <div class="pt-3">
+        <p class="form-check-label">Game</p>
+        <div class="">
+          <select class="form-control" id="game">
+            <option value="5">5 - Very much</option>
+            <option value="4">4 - Sounds good</option>
+            <option value="3">3 - No opinion</option>
+            <option value="2">2 - Not realy</option>
+            <option value="1">1 - Not at all</option>
+          </select>
+        </div>
+      </div>
+      <div class="pt-3">
+        <p class="form-check-label">Desktop Applications</p>
+        <div class="">
+          <select class="form-control" id="back">
+            <option value="5">5 - Very much</option>
+            <option value="4">4 - Sounds good</option>
+            <option value="3">3 - No opinion</option>
+            <option value="2">2 - Not realy</option>
+            <option value="1">1 - Not at all</option>
+          </select>
+        </div>
+      </div>
+      <div class="pt-3">
+        <p class="form-check-label">System Development</p>
+        <div class="">
+          <select class="form-control" id="back">
+            <option value="5">5 - Very much</option>
+            <option value="4">4 - Sounds good</option>
+            <option value="3">3 - No opinion</option>
+            <option value="2">2 - Not realy</option>
+            <option value="1">1 - Not at all</option>
+          </select>
         </div>
       </div>
       <div class="">
