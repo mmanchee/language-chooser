@@ -4,15 +4,35 @@ function questCalc(que1, que2, que3, que4, que5) {
 }
 
 function prefCalc(pref1, pref2) {
+  let pref;
   if (pref1 === pref2) {
-    return pref1;
+    pref = pref1;
   } else if (pref1 === 1 || pref1 === 4 || pref1 === 6) {
-    
+    pref = "both";
+  } else {
+    pref = pref1;
   }
+  return pref;
 }
 
 function suggCalc(questTotal, preferance, salary, que6, que7) {
+  if (preferance === "both") {
+    if (suggetion === 1) {
+      suggestion = "1. JavaScript";
+    } else if (suggetion === 2) {
 
+    } else if (suggetion === 2) {
+
+    } else if (suggetion === 2) {
+
+    } else if (suggetion === 2) {
+
+    } else {
+      
+    }
+  }
+
+  return suggestion;
 }
 
 $(document).ready(function() {
