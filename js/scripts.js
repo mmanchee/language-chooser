@@ -3,17 +3,7 @@ function questCalc(que1, que2, que3, que4, que5) {
   return queTotal;
 }
 
-function prefCalc(pref1) {
-  let pref;
-  if (pref1 === 1 || pref1 === 4 || pref1 === 6) {
-    pref = "both";
-  } else {
-    pref = pref1;
-  }
-  return pref;
-}
-
-function suggCalc(questTotal, preferance, salary, que6, que7, pref1, pref2) {
+function suggCalc(questTotal, que6, que7, pref1, pref2) {
   let suggestion = 0;
   let choice;
   let choiceSugg;
@@ -30,31 +20,31 @@ function suggCalc(questTotal, preferance, salary, que6, que7, pref1, pref2) {
   } else if (pref1 === 2) {
     if (choice === 1) {
       suggestion = "Back-End - Python";
-      choiceSugg = "Back-End - Ruby or PHP";
+      choiceSugg = ", Ruby, and PHP";
     } else if (choice === 2) {
       suggestion = "Back-End - Ruby or PHP";
-      choiceSugg = "Back-End - Python";
+      choiceSugg = ", and Python";
     } else {
       suggestion = "Back-End - JavaScript";
-      choiceSugg = "Back-End - Python";
+      choiceSugg = ", and Python";
     }
   } else if (pref1 === 3) {
     if (choice === 1) {
       suggestion = "Mobile - Java";
-      choiceSugg = "Mobile - C#";
+      choiceSugg = ", and C#";
     } else {
       suggestion = "Mobile - C#";
-      choiceSugg = "Mobile - Java";
+      choiceSugg = ", and Java";
     }
   } else if (pref1 === 4) {
     suggestion = "Game - C#";
   } else if (pref1 === 5) {
     if (choice === 1) {
       suggestion = "Desktop - C#";
-      choiceSugg = "Desktop - Go";
+      choiceSugg = ", and Go";
     } else {
       suggestion = "Desktop - Go";
-      choiceSugg = "Desktop - C#";
+      choiceSugg = ", and C#";
     }
   } else {
     suggestion = "System - Go";
@@ -89,29 +79,19 @@ function suggCalc(questTotal, preferance, salary, que6, que7, pref1, pref2) {
       suggestion = "1. " + suggetion + ", and 2. System - Go";
     } 
   } else if (pref1 === 1 || pref1 === 4 || pref1 === 6){
-    suggestion = suggestion + ". I would suggest looking at some other programs too"
+    suggestion = suggestion + ". I would suggest looking at some other programs too";
   } else {
-    if (choice === 1 || choice === 3) {
-      choice = 2;
-    } else {
-      choice = 1;
-    }
-    if (pref1 === 2) {
-      if (choice === 1) {
-        suggestion = "1. " + suggetion + ", and 2. Back-End - Python";
-      } else {
-        suggestion = "1. " + suggetion + ", and 2. Back-End - Ruby or PHP"
-      }
-    }
-    if (pref1 === 3) {
-      if (choice === 1) {
-        suggestion = "1. " + suggetion + ", and 2. Mobile - Java"
-      } else {
-        suggestion = "1. " + suggetion + ", and 2. Mobile - C#"
-      }
-    }
+    suggestion = suggetion + choiceSugg;
   }
 
+  if (questTotal >= 17) {
+    suggestion = "Work hard and you will do well. Your starter language should be " + suggestion + ".";
+  } else if (questTotal >= 10) {
+    suggestion = "You may have some hard times, but with a few extra skills you will do ok. Your starter language should be " + suggestion + ".";
+  } else {
+    suggestion = "Maybe programming is not your thing. If you really want to, you should look into some problem solving and critical thinking skills before you get started.";
+  }
+  
   return suggestion;
 }
 
@@ -125,7 +105,6 @@ $(document).ready(function() {
     const question5 = parseInt($("input:radio[name=question5]:checked").val());
     const question6 = parseInt($("input:radio[name=question6]:checked").val());
     const question7 = parseInt($("input:radio[name=question7]:checked").val());
-    const salery = parseInt($("input:radio[name=salery]:checked").val());
     const first = parseInt($("#first").val());
     const second = parseInt($("#second").val());
 
@@ -133,7 +112,7 @@ $(document).ready(function() {
 
     const pTotal = prefCalc(first);
 
-    const result = suggCalc(pTotal, pTotal, salary, question6, question7, first, second);
+    const result = suggCalc(pTotal, pTotal, question6, question7, first, second);
 
     $("#suggested-language").text(result);
 
