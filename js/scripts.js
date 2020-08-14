@@ -109,8 +109,7 @@ $(document).ready(function() {
     const question7 = parseInt($("input:radio[name=question7]:checked").val());
     const first = parseInt($("#first").val());
     const second = parseInt($("#second").val());
-    alert(first);
-    alert(second);
+   
     const qTotal = questCalc(question1, question2, question3, question4, question5);
 
     const result = suggCalc(qTotal, question6, question7, first, second);
@@ -119,6 +118,5 @@ $(document).ready(function() {
 
     $("#language").show();
     $(".survey").toggle();
-
   });
 });
