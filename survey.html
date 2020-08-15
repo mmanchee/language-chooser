@@ -265,21 +265,58 @@
 
       <button type="submit" class="btn bg-info mt-4">Submit</button>
     </form>
-    <div id="language">
-      <h3>Here are your results:</h3>
-      <p> <span id="suggested-language"></span></p>
-      <p>Please follow the links below to read more about your suggested programs.</p>
-      <img src="img/coding.png" class="coding">
-      <ul>
-        <li><a href="https://www.w3schools.com/js/default.asp">JavaScript</a></li>
-        <li><a href="https://www.w3schools.com/python/default.asp">Python</a></li>
-        <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
-        <li><a href="https://www.w3schools.com/java/java_intro.asp">Java</a></li>
-        <li><a href="https://www.w3schools.com/php/default.asp">PHP</a></li>
-        <li><a href="https://www.w3schools.com/cs/default.asp">C#</a></li>
-        <li><a href="https://golang.org/">Go</a></li>
-      </ul>
-    </div>
+    <form id="language">
+      <div>
+        <h3>Here are your results:</h3>
+        <p> <span id="suggested-language"></span></p>
+        <p>Please follow the links below to read more about your suggested programs.</p>
+        <img src="img/coding.png" class="coding">
+        <ul>
+          <li><a href="https://www.w3schools.com/js/default.asp">JavaScript</a></li>
+          <li><a href="https://www.w3schools.com/python/default.asp">Python</a></li>
+          <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+          <li><a href="https://www.w3schools.com/java/java_intro.asp">Java</a></li>
+          <li><a href="https://www.w3schools.com/php/default.asp">PHP</a></li>
+          <li><a href="https://www.w3schools.com/cs/default.asp">C#</a></li>
+          <li><a href="https://golang.org/">Go</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>If you would like further information, please fill out the information below. You will be redirected back to this page once you have verified.</p>
+        <div class="form-group">
+          <label for="first-name">First Name:</label>
+          <input id="first-name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="last-name">Last Name:</label>
+          <input id="last-name" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input id="email" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="email-2">Re-enter Email:</label>
+          <input id="email-2" class="form-control" type="text">
+        </div>
+      </div>
+      <button type="submit" class="btn bg-info mt-4">Verfiy</button>
+      <button onClick="window.location.reload();">Try Again</button>
+    </form>
+    <form id="verify">
+      <div >
+        <p>Thank you for submitting your information. Please verify your information and click the verify button. You will be redirected back to your result.</p>
+        <p>Name: <span id="full-name"></span></p>
+        <p>Email: <span id="verified-email"></span></p>
+        <button type="submit" class="btn bg-info mt-4">Verfiy</button>
+      </div>
+    </form>
+    <form id="not-valid">
+      <div>
+        <p>Emails not the same. Please press the button to re-submt your information.</p>
+        <button type="submit" class="btn bg-info mt-4">Re-verfiy</button>
+      </div>
+    </form>
     <p class="pt-5 font-italic text-center">The suggestion made in this program are only for acedemic purposes.</br>Thank you for your participation.</p>
   </div>
 </body>
