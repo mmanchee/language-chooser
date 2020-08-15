@@ -130,7 +130,7 @@ $(document).ready(function() {
       let fullName = firstName + " " + lastName;
 
       $("#full-name").text(fullName);
-      $("verified-email").text(email);
+      $("#verified-email").text(email);
 
       $("#verify").show();
       $("#language").toggle();
