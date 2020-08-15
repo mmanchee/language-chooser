@@ -109,7 +109,7 @@ $(document).ready(function() {
     const question7 = parseInt($("input:radio[name=question7]:checked").val());
     const first = parseInt($("#first").val());
     const second = parseInt($("#second").val());
-   
+  
     const qTotal = questCalc(question1, question2, question3, question4, question5);
 
     const result = suggCalc(qTotal, question6, question7, first, second);
@@ -118,5 +118,37 @@ $(document).ready(function() {
 
     $("#language").show();
     $(".survey").toggle();
+  });
+  $("#language").submit(function(event) {
+    event.preventDefault();
+    const firstName = $("input#first-name").val();
+    const lastName = $("input#last-name").val();
+    const email = $("input#email").val();
+    const email2 = $("input#email-2").val();
+
+    if (email === email2) {
+      let fullName = firstName + " " + lastName;
+
+      $("#full-name").text(fullName);
+      $("verified-email").text(email);
+
+      $("#verify").show();
+      $("#language").toggle();
+    } else {
+      $("#not-valid").show();
+      $("#language").toggle();
+    }  
+  });
+  $("#verify").submit(function(event) {
+    event.preventDefault();
+
+    $("#language").show();
+    $("#verify").toggle();
+  });
+  $("#not-valid").submit(function(event) {
+    event.preventDefault();
+
+    $("#language").show();
+    $("#not-valid").toggle();
   });
 });
