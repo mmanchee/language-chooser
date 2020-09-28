@@ -2,6 +2,8 @@
 
 #### _Week 2 Solo Excersice for Epicodus, August 14th, 2020_
 
+#### Published at: [Language Chooser](https://mmanchee.github.io/language-chooser/)
+
 #### _Mike Manchee_
 
 ### Description
