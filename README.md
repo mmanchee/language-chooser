@@ -1,6 +1,6 @@
 # _Language Chooser_
 
-#### _Week 2 Solo Excersice for Epicodus, August 14th, 2020_
+#### _Week 2 Solo Exercise for Epicodus, August 14th, 2020_
 
 #### Published at: [Language Chooser](https://mmanchee.github.io/language-chooser/)
 
